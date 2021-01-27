@@ -1,4 +1,6 @@
-<h1>Sign Up</h1>
+<h1>welcome to your tracker</h1>
+
+<h3>sign up below</h1>
 
 <% if @user.errors.any? %>
   <ol>
@@ -24,5 +26,5 @@
     <%= f.password_field :password_confirmation, :class => 'form-control' %>
   </div>
 
-  <%= f.submit "Sign up!", :class => 'btn btn-success btn-lg' %>
+  <%= f.submit "next", :class => 'btn btn-success btn-lg' %>
 <% end %>
