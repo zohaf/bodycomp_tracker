@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  phase_id: 1
+  entry_date: 2021-01-26
+  phase: MyText
+  overall_weight: 
+  muscle_weight: 
+  fat_weight: 
+  fat_percentage: 
+  image: MyText
+  calorie_intake: 
+  macros_overall: MyText
+  macros_protein: MyText
+  macros_carbs: MyText
+  macros_fat: MyText
+  cardio: MyText
+  period: MyText
+  notes/observasions: MyText
+
+two:
+  user_id: 1
+  phase_id: 1
+  entry_date: 2021-01-26
+  phase: MyText
+  overall_weight: 
+  muscle_weight: 
+  fat_weight: 
+  fat_percentage: 
+  image: MyText
+  calorie_intake: 
+  macros_overall: MyText
+  macros_protein: MyText
+  macros_carbs: MyText
+  macros_fat: MyText
+  cardio: MyText
+  period: MyText
+  notes/observasions: MyText

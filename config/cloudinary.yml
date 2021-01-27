@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: doezvmspo
+  api_key: '599589354735374'
+  api_secret: 4JBoLO7feB7xbptGDNVmRy_swW8
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: doezvmspo
+  api_key: '599589354735374'
+  api_secret: 4JBoLO7feB7xbptGDNVmRy_swW8
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: doezvmspo
+  api_key: '599589354735374'
+  api_secret: 4JBoLO7feB7xbptGDNVmRy_swW8
+  enhance_image_tag: true
+  static_file_support: false
