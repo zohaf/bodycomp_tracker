@@ -1,9 +1,7 @@
 class LogbooksController < ApplicationController
   before_action :check_for_login
 
-  def index
-    @logbooks = logbooks.all
-  end
+  
 
   def new
     @logbook = Logbook.new
