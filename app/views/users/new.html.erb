@@ -1,30 +1,59 @@
-<h1>welcome to your tracker</h1>
+<body class="d-flex h-100 text-center text-white bg-dark">
+  <div class="cover-container d-flex w-100 h-3000 p-3 mx-auto flex-column">
+    <header class="px-3 py-5">
+        <h1 class="float-md-start mb-0">welcome to your tracker</h1>
+    </header>
 
-<h3>sign up below</h1>
+  
 
-<% if @user.errors.any? %>
-  <ol>
+<div class='px-3 py-4'>
+      <h2 class="px-2 p-3">Sign Up</h2>
+
+      <% if @user.errors.any? %>
+  <ul class="list-unstyled list-group-item list-group-item-danger">
     <% @user.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
     <% end %>
-  </ol>
+  </ul>
 <% end %>
 
 <%= form_for @user do |f| %>
-  <div class="form-group">
+  <div class="col-12 form-group">
     <%= f.label :email %>
-    <%= f.email_field :email, :required => true, :class => 'form-control' %>
+    <%= f.email_field :email, :required => true, :placeholder => "pancake@hotmail.com", :class => 'form-control' %>
   </div>
 
-  <div class="form-group">
+  <div class="col-12 form-group">
     <%= f.label :password %>
     <%= f.password_field :password, :class => 'form-control' %>
   </div>
 
-  <div class="form-group">
+  <div class="col-12 form-group">
     <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation, :class => 'form-control' %>
   </div>
 
-  <%= f.submit "next", :class => 'btn btn-success btn-lg' %>
+  <div class="col-md-12 d-inline-flex align-items-center">
+    <div class="form-group">
+    <%= f.label :nickname %>
+    <%= f.text_field :nickname, :placeholder => "pancake", :class => 'form-control' %>
+  </div>
+
+  
+
+  <div class="col-md-4 form-group">
+    <%= f.label :height %>
+    <%= f.text_field :height, :placeholder => "180 cm", :class => 'form-control' %>
+  </div>
+
+  <div class="col-md-4 form-group">
+    <%= f.label :sex %>
+    <%= f.text_field :sex, :placeholder => "female", :class => 'form-control' %></div>
+</div>
+<div class="pt-4"></div>
+  <div class="col-md-12 align-center pt-8">
+  <%= f.submit "next", :class => 'btn btn-light btn-lg' %>
 <% end %>
+</div>
+
+</body>

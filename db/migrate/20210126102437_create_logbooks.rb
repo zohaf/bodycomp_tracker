@@ -22,7 +22,7 @@ class CreateLogbooks < ActiveRecord::Migration[5.2]
       
       t.text :cardio
       t.text :period
-      t.text :notes/observasions
+      t.text :notes_observasions
 
       t.timestamps
     end

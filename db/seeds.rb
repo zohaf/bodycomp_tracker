@@ -1,7 +1,7 @@
 User.destroy_all
 #athletes
-u1 = User.create :email => 'zohafard@gmail.com' :password => 'chicken'
-u2 = User.create :email => 'erfanianbamdad@gmail.com' :password => 'chicken'
+u1 = User.create :email => 'zohafard@gmail.com' :password => '123' :admin => true
+u2 = User.create :email => 'erfanianbamdad@gmail.com' :password => '123'
 
 #couch
 u3 = User.create :email => 'matt.hinks@icloud.com'
@@ -19,7 +19,9 @@ l6 = Logbook.create :id => 6
 puts "#{ Logbook.count } logbooks."
 
 
-
+puts "logbooks and users."
+u1.logbook << l1
+u2.logbook << l2
 
 
 

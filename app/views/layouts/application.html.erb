@@ -1,15 +1,36 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en" class="h-100 font-monospace">
   <head>
-    <title>BodycompTracker</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/cover/">
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">  
+    <link href="cover.css" rel="stylesheet">
+    <link href="dashboard.css" rel="stylesheet">
   </head>
 
-  <body>
-    <%= yield %>
+  
+  <body class="d-flex h-100 text-center text-white">
+    <div class="container">
+
+      <%= yield %>
+
+    </div>
+
   </body>
-</html>
+  
+  </html>
+
+<!-- 
+  <nav class="px-3 py-5 nav nav-masthead justify-content-center float-md-start">
+    <%= link_to 'Home', root_path, :class => 'nav-link active' %>
+    <% if @current_user.present? %>
+      <% if @current_user.admin? %>
+        <%= link_to 'Users', users_path %>
+      <% end %>
+      <%= link_to "new logbook", new_logbook_path %>
+     
+  </nav> -->

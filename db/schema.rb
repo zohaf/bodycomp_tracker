@@ -10,9 +10,51 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2021_01_27_021150) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "logbooks", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "phase_id"
+    t.date "entry_date"
+    t.text "phase"
+    t.decimal "overall_weight"
+    t.decimal "muscle_weight"
+    t.decimal "fat_weight"
+    t.decimal "fat_percentage"
+    t.text "image"
+    t.decimal "calorie_intake"
+    t.text "macros_overall"
+    t.text "macros_protein"
+    t.text "macros_carbs"
+    t.text "macros_fat"
+    t.text "cardio"
+    t.text "period"
+    t.text "notes_observasions"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "logbooks_users", id: false, force: :cascade do |t|
+    t.integer "logbook_id"
+    t.integer "user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.text "email"
+    t.string "password_digest"
+    t.boolean "admin"
+    t.text "nickname"
+    t.binary "image"
+    t.date "dob"
+    t.text "sex"
+    t.text "height"
+    t.integer "logbook_id"
+    t.integer "phase_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end

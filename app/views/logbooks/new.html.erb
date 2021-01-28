@@ -1,0 +1,79 @@
+
+ 
+<header class="px-3 py-5">
+        <h3 class="float-md-start mb-0">welcome back <%= @current_user.nickname %> to your tracker</h3>
+</header>
+
+  
+
+<body>
+<div class="px-3">
+  
+</div>  
+    
+<div class="container">  
+<div class="row my-5">
+  <div class="col-3 g-3 px-4">
+    <h2 class="px-2 p-3">New Log</h2>
+    <%= form_for @logbook do |f| %>
+    
+      <%= f.label :entry_date, :class => "form-label mt-4" %>
+      <%= f.date_field :entry_date, :class => "form-control" %>
+    
+      <%= f.label :weight, :class => "form-label my-3"  %>
+      <%= f.text_field :overall_weight, :placeholder => '54.2 kg', :class => "form-control" %>
+    
+    
+      <%= f.label :fat_percentage, :class => "form-label mt-3"  %>
+      <%= f.text_field :fat_percentage, :placeholder => '19.9', :class => "form-control" %>
+    
+      <%= f.label :marcro_intake, :class => "form-label mt-3"  %>
+      <%= f.text_field :macros_overall, :placeholder => '150P 250C 40F', :class => "form-control" %>
+      
+      <div class="pt-4"></div>
+      <%= f.label :phase, :class => "form-label my-3" %>
+      <%= f.select :phase, ['', 'mini cut', 'cut', 'reverse', 'maintenance', 'build'], :class => "form-control" %>
+    
+      <div class="pt-4"></div>
+  <div class="col-md-12 align-center pt-8">
+      <%= f.submit "submit", :class => 'btn btn-light btn-md' %>
+  </div>
+      
+      <% end %>
+    
+<!--       
+    <div class="my-5">
+      <%= link_to "Log out #{ @current_user.nickname }", login_path, :method => 'delete', :class => 'btn text-white' %>
+    </div> -->
+  </div>
+  
+  <div class="col-auto g-3 px-4">
+    <table class="table table-responsive table-hover table-m text-white">
+      <thead>
+        <tr>
+          <th>entry date</th>
+          <th>phase</th>
+          <th>body weight</th>
+          <th>fat percentage</th>
+          <th>macro intake</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @current_user.logbooks.each do |logbook| %>
+        <tr>
+        <td><%= logbook.entry_date %></td>
+        <td><%= logbook.phase %></td>
+        <td><%= logbook.overall_weight %></td>
+        <td><%= logbook.fat_percentage %></td>
+        <td><%= logbook.macros_overall %></td>
+        </tr>
+      <% end %>
+    
+      </tbody>
+    </table>
+
+  </div>
+</div>
+</div>
+
+</body>
