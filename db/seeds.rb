@@ -1,7 +1,7 @@
 User.destroy_all
 #athletes
-u1 = User.create :email => 'zohafard@gmail.com' :password => '123' :admin => true
-u2 = User.create :email => 'erfanianbamdad@gmail.com' :password => '123'
+u1 = User.create :email => 'zohafard@gmail.com' 
+u2 = User.create :email => 'erfanianbamdad@gmail.com'
 
 #couch
 u3 = User.create :email => 'matt.hinks@icloud.com'
