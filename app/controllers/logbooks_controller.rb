@@ -4,6 +4,7 @@ class LogbooksController < ApplicationController
   
   def index
     @logbooks = Logbook.all
+    @data = Logbook.group(:entry_date).count
   end
 
   def new
@@ -17,6 +18,7 @@ class LogbooksController < ApplicationController
     logbook = Logbook.create logbook_params # create
     @current_user.logbooks << logbook       # associate
     redirect_back :fallback_location => root_path
+    
   end
 
   private
